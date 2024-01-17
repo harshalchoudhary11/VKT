@@ -13,19 +13,18 @@ const AddProject = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     const projectData = {
-      projectID,
-      projectName,
-      technology,
-      startDate,
-      endDate,
-      vendorId,
-      remarks,
+      projectID: filterForm.projectID,
+      projectName: filterForm.projectName,
+      technology: filterForm.technology,
+      startDate: filterForm.startDate,
+      endDate: filterForm.endDate,
+      vendorName: filterForm.vendorName,
+      remarks: filterForm.remarks,
     };
 
     try {
-      const response = await fetch("/api/projects", {
+      const response = await fetch("", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -36,13 +35,15 @@ const AddProject = () => {
       if (response.ok) {
         console.log("Project data successfully sent to the server.");
         // Optionally reset the form after successful submission
-        setProjectID("");
-        setProjectName("");
-        setTechnology("");
-        setStartDate("");
-        setEndDate("");
-        setVendorId("");
-        setRemarks("");
+        setFilterForm({
+          projectID: "",
+          projectName: "",
+          startDate: "",
+          endDate: "",
+          technology: "",
+          vendorName: "",
+          remarks: "",
+        });
       } else {
         console.error("Failed to send project data to the server.");
       }
@@ -61,7 +62,7 @@ const AddProject = () => {
         </div>
         <div className="w-full h-4/5 mx-auto bg-white p-2  shadow-md border-2 border-solid border-gray-300">
           <h2 className="text-2xl font-bold mb-4 ">Project Details</h2>
-          //From Start
+          {/* From Start */}
           <form className="grid gap-3 grid-cols-3" onSubmit={handleSubmit}>
             <div className="mb-1">
               <label
@@ -77,8 +78,11 @@ const AddProject = () => {
                 className="mt-1 p-2 border rounded-md w-full"
                 placeholder="Enter Project ID"
                 value={filterForm.projectID}
-                onChange={(prev) =>
-                  setFilterForm({ ...prev, projectID: value })
+                onChange={(event) =>
+                  setFilterForm({
+                    ...filterForm,
+                    projectID: event.target.value,
+                  })
                 }
               />
             </div>
@@ -97,8 +101,11 @@ const AddProject = () => {
                 className="mt-1 p-2 border rounded-md w-full"
                 placeholder="Enter Project Name"
                 value={filterForm.projectName}
-                onChange={(prev) =>
-                  setFilterForm({ ...prev, projectName: value })
+                onChange={(event) =>
+                  setFilterForm({
+                    ...filterForm,
+                    projectName: event.target.value,
+                  })
                 }
               />
             </div>
@@ -117,8 +124,11 @@ const AddProject = () => {
                 className="mt-1 p-2 border rounded-md w-full"
                 placeholder="Enter Technology"
                 value={filterForm.technology}
-                onChange={(prev) =>
-                  setFilterForm({ ...prev, technology: value })
+                onChange={(event) =>
+                  setFilterForm({
+                    ...filterForm,
+                    technology: event.target.value,
+                  })
                 }
               />
             </div>
@@ -136,8 +146,11 @@ const AddProject = () => {
                 name="startDate"
                 className="mt-1 p-2 border rounded-md w-full"
                 value={filterForm.startDate}
-                onChange={(prev) =>
-                  setFilterForm({ ...prev, startDate: value })
+                onChange={(event) =>
+                  setFilterForm({
+                    ...filterForm,
+                    startDate: event.target.value,
+                  })
                 }
               />
             </div>
@@ -155,7 +168,12 @@ const AddProject = () => {
                 name="endDate"
                 className="mt-1 p-2 border rounded-md w-full"
                 value={filterForm.endDate}
-                onChange={(prev) => setFilterForm({ ...prev, endDate: value })}
+                onChange={(event) =>
+                  setFilterForm({
+                    ...filterForm,
+                    endDate: event.target.value,
+                  })
+                }
               />
             </div>
             <div className="mb-1">
@@ -172,8 +190,11 @@ const AddProject = () => {
                 className="mt-1 p-2 border rounded-md w-full"
                 placeholder="Enter Project Name"
                 value={filterForm.vendorName}
-                onChange={(prev) =>
-                  setFilterForm({ ...prev, vendorName: value })
+                onChange={(event) =>
+                  setFilterForm({
+                    ...filterForm,
+                    vendorName: event.target.value,
+                  })
                 }
               />
             </div>
@@ -192,7 +213,12 @@ const AddProject = () => {
                 className="mt-1 p-2 border rounded-md w-full"
                 placeholder="Enter Remarks"
                 value={filterForm.remarks}
-                onChange={(prev) => setFilterForm({ ...prev, remarks: value })}
+                onChange={(event) =>
+                  setFilterForm({
+                    ...filterForm,
+                    remarks: event.target.value,
+                  })
+                }
               ></textarea>
             </div>
 

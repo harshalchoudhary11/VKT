@@ -25,7 +25,7 @@ const CreateAccount = () => {
                 htmlFor="projectID"
                 className="block text-sm font-medium text-gray-600"
               >
-                Enter Code<span className="text-red-600">*</span>
+                Employee ID<span className="text-red-600">*</span>
               </label>
               <input
                 type="text"
@@ -50,20 +50,6 @@ const CreateAccount = () => {
                 name="projectName"
                 className="mt-1 p-2 border rounded-md w-full"
                 placeholder="Enter first name"
-              />
-
-              <label
-                htmlFor="projectName"
-                className="block text-sm font-medium text-gray-600 "
-              >
-                Middle Name <span className="text-red-600">*</span>
-              </label>
-              <input
-                type="text"
-                id="projectName"
-                name="projectName"
-                className="mt-1 p-2 border rounded-md w-full"
-                placeholder="Enter middle name"
               />
 
               <label
@@ -108,30 +94,176 @@ const CreateAccount = () => {
                 className="mt-1 p-2 border rounded-md w-full"
                 placeholder="Enter mobile number 2"
               />
+
               <label
                 htmlFor="technology"
                 className="block text-sm font-medium text-gray-600"
               >
-                Landline<span className="text-red-600">*</span>
+                Email Address<span className="text-red-600">*</span>
+              </label>
+              <input
+                type="email"
+                id="technology"
+                name="technology"
+                className="mt-1 p-2 border rounded-md w-full"
+                placeholder="Enter email"
+              />
+            </div>
+            <h3 className="text-md font-extrabold mb-4">Personal Details</h3>
+            <div className="mb-1 ml-8 space-y-2">
+              <label
+                htmlFor="projectName"
+                className="block text-sm font-medium text-gray-600 "
+              >
+                Qualification <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="text"
+                id="projectName"
+                name="projectName"
+                className="mt-1 p-2 border rounded-md w-full"
+                placeholder="Qualification"
+              />
+              <label
+                htmlFor="projectName"
+                className="block text-sm font-medium text-gray-600 "
+              >
+                Date of birth <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="date"
+                id="projectName"
+                name="projectName"
+                className="mt-1 p-2 border rounded-md w-full"
+                placeholder="Enter Date of birth"
+              />
+
+              <label
+                htmlFor="projectName"
+                className="block text-sm font-medium text-gray-600 "
+              >
+                Age <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="number"
+                id="projectName"
+                name="projectName"
+                className="mt-1 p-2 border rounded-md w-full"
+                placeholder="Enter father's name"
+              />
+
+              <label
+                htmlFor="projectName"
+                className="block text-sm font-medium text-gray-600 "
+              >
+                Gender <span className="text-red-600">*</span>
+              </label>
+              <select
+                id="Gender"
+                name="Gender"
+                className="mt-1 p-2 border rounded-md w-full"
+                placeholder="Select Gender"
+                required
+              >
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+              </select>
+
+              <label
+                htmlFor="projectName"
+                className="block text-sm font-medium text-gray-600 "
+              >
+                Experience <span className="text-red-600">*</span>
+              </label>
+              <input
+                type="text"
+                id="projectName"
+                name="projectName"
+                className="mt-1 p-2 border rounded-md w-full"
+                placeholder="Enter Experience"
+              />
+            </div>
+
+            <h3 className="text-md font-extrabold mb-4"> Address</h3>
+            <div className="mb-1 ml-8 space-y-2">
+              <label
+                htmlFor="technology"
+                className="block text-sm font-medium text-gray-600"
+              >
+                Personal Address<span className="text-red-600">*</span>
               </label>
               <input
                 type="text"
                 id="technology"
                 name="technology"
                 className="mt-1 p-2 border rounded-md w-full"
-                placeholder="Enter landline number"
+                placeholder="Enter personal address"
+              />
+              <label
+                htmlFor="technology"
+                className="block text-sm font-medium text-gray-600"
+              >
+                Temporary Address<span className="text-red-600">*</span>
+              </label>
+              <input
+                type="text"
+                id="technology"
+                name="technology"
+                className="mt-1 p-2 border rounded-md w-full"
+                placeholder="Enter Temporary address"
+              />
+
+              <label
+                htmlFor="technology"
+                className="block text-sm font-medium text-gray-600"
+              >
+                State<span className="text-red-600">*</span>
+              </label>
+              <input
+                type="text"
+                id="technology"
+                name="technology"
+                className="mt-1 p-2 border rounded-md w-full"
+                placeholder="Enter state name"
+              />
+
+              <label
+                htmlFor="technology"
+                className="block text-sm font-medium text-gray-600"
+              >
+                City<span className="text-red-600">*</span>
+              </label>
+              <input
+                type="text"
+                id="technology"
+                name="technology"
+                className="mt-1 p-2 border rounded-md w-full"
+                placeholder="Enter city name"
+              />
+
+              <label
+                htmlFor="technology"
+                className="block text-sm font-medium text-gray-600"
+              >
+                Pincode<span className="text-red-600">*</span>
+              </label>
+              <input
+                type="text"
+                id="technology"
+                name="technology"
+                className="mt-1 p-2 border rounded-md w-full"
+                placeholder="Enter Pincode"
               />
             </div>
 
             <div className="mt-1 space-x-4 col-span-2">
-              <Link to="/createAccounttwo">
-                <button
-                  type="submit"
-                  className="bg-blue-950 text-white p-2 rounded-md w-36 text-centre "
-                >
-                  Save & Continue
-                </button>
-              </Link>
+              <button
+                type="submit"
+                className="bg-green-600 text-white p-2 ml-4 rounded-md w-36 text-centre "
+              >
+                Done Registration
+              </button>
             </div>
           </form>
         </div>
